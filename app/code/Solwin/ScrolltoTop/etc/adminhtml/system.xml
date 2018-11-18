@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!--
+
+Solwin Infotech
+Solwin ScrolltoTop Extension
+
+@category   Solwin
+@package    Solwin_ScrolltoTop
+@copyright  Copyright © 2006-2016 Solwin (https://www.solwininfotech.com)
+@license    https://www.solwininfotech.com/magento-extension-license/ 
+
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <section id="scrollsection" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Scroll to Top</label>
+            <tab>solwin_extension_tab</tab>
+            <resource>Solwin_ScrolltoTop::scrolltotop</resource>
+            <group id="scrollgroup" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="active" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <!--Display--> 
+                <field id="display" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display</label>
+                    <source_model>Solwin\ScrolltoTop\Model\Source\Display</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <!--select Position--> 
+                <field id="position" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <source_model>Solwin\ScrolltoTop\Model\Source\Position</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <!--Text on Link--> 
+                <field id="link_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text on Link</label>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <!--Background Color--> 
+                <field id="bgclr" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <comment><![CDATA[Hex value of colour. e.g #8f8f8f]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <!--Background Hover Color--> 
+                <field id="bghoverclr" translate="label" type="text" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Hover Color</label>
+                    <comment><![CDATA[Hex value of colour. e.g #000000]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <!--Text Colour--> 
+                <field id="textclr" translate="label" type="text" sortOrder="18" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Colour</label>
+                    <comment><![CDATA[Hex value of colour. e.g #8f8f8f]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <!--Text Hover Colour--> 
+                <field id="texthoverclr" translate="label" type="text" sortOrder="19" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Hover Colour</label>
+                    <comment><![CDATA[Hex value of colour. e.g #8f8f8f]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <!--Image for Link--> 
+                <field id="link_image" translate="label" type="image" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image for Link</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">scrolltotop</upload_dir>
+                    <base_url type="media" scope_info="1">scrolltotop</base_url>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <!--Image for Hover Link--> 
+                <field id="link_hover_image" translate="label" type="image" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image for Hover Link</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">scrolltotop</upload_dir>
+                    <base_url type="media" scope_info="1">scrolltotop</base_url>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
